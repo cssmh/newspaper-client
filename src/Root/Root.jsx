@@ -10,6 +10,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import MyArticles from "../Pages/MyArticles/MyArticles";
 import PremiumArticles from "../Pages/PremiumArticles/PremiumArticles";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import MyProfile from "../Components/MyProfile/MyProfile";
 
 const Root = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const Root = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/my-profile",
+        element: <MyProfile />,
       },
     ],
   },

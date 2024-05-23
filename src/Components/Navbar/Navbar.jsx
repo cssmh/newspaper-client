@@ -6,15 +6,11 @@ import useAuth from "../../useCustomHook/useAuth";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
-  const { user } = useAuth();
+  const { user, logOut } = useAuth();
 
-  // const [userData] = useUser()
-
-  //   const handleSignOut = () => {
-  //     logOut().then().catch();
-  //   };
-
-  // hanlde scroll function
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,20 +49,13 @@ const Navbar = () => {
       <li className="font-bold">
         <NavLink to={"/premium-articles"}>Premium Articles</NavLink>
       </li>
-      {user?.email ? (
-        <button>Logout</button>
-      ) : (
-        <li className="font-bold">
-          <NavLink to={"/login"}>Login</NavLink>
-        </li>
-      )}
     </>
   );
 
   return (
     <header className="fixed top-0 left-0 right-0">
       <div
-        className={`navbar xl:px-24 ${
+        className={`navbar xl:px-24 py-0 ${
           sticky
             ? "shadow-md bg-base-100 transition-all duration-300 ease-in-out"
             : ""
@@ -131,9 +120,20 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              {/* {user  ? <> {userData?.role === 'admin'? <li><Link to={'/dashboard'}>Dashboard</Link></li> : <li><Link to={'/dashboard/profile'}>Profile</Link></li>}
-                                <li><button onClick={handleSignOut}>Logout</button></li>
-                            </> : <li><Link to={'/login'}>Login</Link></li> } */}
+              {user?.email ? (
+                <>
+                  <li>
+                    <Link to={"/my-profile"}>Profile</Link>
+                  </li>
+                  <li>
+                    <button onClick={handleSignOut}>Logout</button>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <Link to={"/login"}>Login</Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>

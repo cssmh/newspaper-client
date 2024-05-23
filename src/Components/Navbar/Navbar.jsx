@@ -4,15 +4,16 @@ import useAuth from "../../useCustomHook/useAuth";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
-  const { user, } = useAuth();
+  const { user } = useAuth();
 
   // const [userData] = useUser()
 
-//   const handleSignOut = () => {
-//     logOut().then().catch();
-//   };
+  //   const handleSignOut = () => {
+  //     logOut().then().catch();
+  //   };
 
   // hanlde scroll function
+  
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -33,14 +34,30 @@ const Navbar = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li className="font-bold">
-        <NavLink to={"/shop"}>Shop</NavLink>
+        <NavLink to={"/add-articles"}>Add Articles</NavLink>
       </li>
       <li className="font-bold">
-        <NavLink to={"/login"}>Login</NavLink>
+        <NavLink to={"/all-articles"}>All Articles</NavLink>
       </li>
       <li className="font-bold">
-        <NavLink to={"/register"}>Register</NavLink>
+        <NavLink to={"/subscription"}>Subscription</NavLink>
       </li>
+      <li className="font-bold">
+        <NavLink to={"/dashboard"}>Dashboard</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to={"/my-articles"}>My Articles</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to={"/premium-articles"}>Premium Articles</NavLink>
+      </li>
+      {user?.email ? (
+        <button>Logout</button>
+      ) : (
+        <li className="font-bold">
+          <NavLink to={"/login"}>Login</NavLink>
+        </li>
+      )}
     </>
   );
 

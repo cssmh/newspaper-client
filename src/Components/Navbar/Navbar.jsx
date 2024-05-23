@@ -1,4 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
+import defaultPhoto from "../../assets/default.jpg";
+import article from "../../assets/article.jpg";
 import { useEffect, useState } from "react";
 import useAuth from "../../useCustomHook/useAuth";
 
@@ -13,7 +15,7 @@ const Navbar = () => {
   //   };
 
   // hanlde scroll function
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -97,7 +99,7 @@ const Navbar = () => {
           </div>
 
           <Link to={"/"} className="hidden md:block">
-            {/* <img src={logo} className="h-14" /> */}
+            <img src={article} className="h-16" />
           </Link>
         </div>
 
@@ -121,7 +123,7 @@ const Navbar = () => {
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
-                  src={user && user.photoURL}
+                  src={user && user?.photoURL ? user?.photoURL : defaultPhoto}
                 />
               </div>
             </div>

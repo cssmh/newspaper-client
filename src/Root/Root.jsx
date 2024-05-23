@@ -9,11 +9,13 @@ import Subscription from "../Pages/Subscription/Subscription";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import MyArticles from "../Pages/MyArticles/MyArticles";
 import PremiumArticles from "../Pages/PremiumArticles/PremiumArticles";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
 const Root = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

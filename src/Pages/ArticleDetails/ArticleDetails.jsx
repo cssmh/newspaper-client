@@ -2,8 +2,8 @@
 import BannerArticles from "../BannerArticles/BannerArticles";
 
 const ArticleDetails = () => {
-  //   const loadFoodData = useLoaderData();
-  //   const { title, image, publisher, description } = loadFoodData;
+  //   const loadArticlesData = useLoaderData();
+  //   const { title, image, publisher, description } = loadArticlesData;
 
   return (
     <div>
@@ -35,7 +35,7 @@ const ArticleDetails = () => {
             Description
           </button>
         </div>
-        <p>Description</p>
+        <p>Description dynamic</p>
       </div>
     </div>
   );

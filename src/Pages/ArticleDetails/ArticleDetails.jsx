@@ -10,7 +10,7 @@ const ArticleDetails = () => {
       <BannerArticles></BannerArticles>
       <div className="text-center mx-1 max-w-md border-2 py-2 my-5 lg:mx-auto">
         <h1 className="font-semibold text-xl lg:text-[22px] text-blue-800 mb-1">
-          Donator Information
+          Publisher Information
         </h1>
         <p className="text-cyan-600">Name: Publisher name</p>
         <p>Title: </p>

@@ -2,8 +2,8 @@
 import BannerArticles from "../BannerArticles/BannerArticles";
 
 const ArticleDetails = () => {
-  //   const loadArticlesData = useLoaderData();
-  //   const { title, image, publisher, description } = loadArticlesData;
+    const loadArticlesData = useLoaderData();
+    const { title, image, publisher, description } = loadArticlesData;
 
   return (
     <div>
